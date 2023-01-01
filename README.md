@@ -37,14 +37,15 @@ See the files `dispatcher_auto.js`, `eventcontract_auto.js`, and
 Here is a typical command line for building JsAction's `dispatch_auto.js`:
 
 ```bash
-{% raw %}
 find path/to/closure-library path/to/jsaction -name "*.js" |
     xargs java -jar compiler.jar  \
-    --output_wrapper="(function(){%output%})();" \
+    --output_wrapper="(function(){percent-output-percent})();" \
     --only_closure_dependencies \
     --closure_entry_point=jsaction.dispatcherAuto
-{% endraw %}
 ```
+
+(`percent` really means the percent *sign*, but we cannot write this here lest
+it confused github pages.)
 
 ## Using drop-in scripts
 
