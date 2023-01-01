@@ -37,11 +37,13 @@ See the files `dispatcher_auto.js`, `eventcontract_auto.js`, and
 Here is a typical command line for building JsAction's `dispatch_auto.js`:
 
 ```bash
+{% raw %}
 find path/to/closure-library path/to/jsaction -name "*.js" |
     xargs java -jar compiler.jar  \
     --output_wrapper="(function(){%output%})();" \
     --only_closure_dependencies \
     --closure_entry_point=jsaction.dispatcherAuto
+{% endraw %}
 ```
 
 ## Using drop-in scripts
