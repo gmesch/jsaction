@@ -39,13 +39,13 @@ Here is a typical command line for building JsAction's `dispatch_auto.js`:
 ```bash
 find path/to/closure-library path/to/jsaction -name "*.js" |
     xargs java -jar compiler.jar  \
-    --output_wrapper="(function(){percent-output-percent})();" \
+    --output_wrapper="(function(){ %output% })();" \
     --only_closure_dependencies \
     --closure_entry_point=jsaction.dispatcherAuto
 ```
 
-(`percent` really means the percent *sign*, but we cannot write this here lest
-it confused github pages.)
+(There must be a space between `{` and `%` only for the sake of the github pages
+template processor.)
 
 ## Using drop-in scripts
 
