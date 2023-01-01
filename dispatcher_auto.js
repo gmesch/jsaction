@@ -51,7 +51,7 @@ function main(global) {
     return;
   }
   // Binds a dispatcher to the contract.
-  var dispatcher = new jsaction.Dispatcher();
+  var dispatcher = new jsaction.Dispatcher;
   global['jsaction']['__dispatchTo'](
       goog.bind(dispatcher.dispatch, dispatcher));
 

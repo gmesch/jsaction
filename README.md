@@ -31,18 +31,18 @@ The compiler is able to handle dependency ordering automatically with the
 `--only_closure_dependencies` flag. It needs to be provided with the sources and
 any entry points.
 
-See the files dispatch_auto.js, eventcontract_auto.js, and
-eventcontract_example.js for typical entry points.
+See the files `dispatcher_auto.js`, `eventcontract_auto.js`, and
+`eventcontract_example.js` for typical entry points.
 
-Here is a typical command line for building JsAction's dispatch_auto.js:
+Here is a typical command line for building JsAction's `dispatch_auto.js`:
 
-<pre>
+```bash
 find path/to/closure-library path/to/jsaction -name "*.js" |
     xargs java -jar compiler.jar  \
     --output_wrapper="(function(){%output%})();" \
     --only_closure_dependencies \
     --closure_entry_point=jsaction.dispatcherAuto
-</pre>
+```
 
 ## Using drop-in scripts
 
@@ -88,7 +88,7 @@ If an `eventType` is not specified, JsAction will assume `click`.
 ### Set up
 
 ```javascript
-const eventContract = new jsaction.EventContract();
+const eventContract = new jsaction.EventContract;
 
 // Events will be handled for all elements under this container.
 eventContract.addContainer(document.getElementById('container'));
@@ -97,7 +97,7 @@ eventContract.addContainer(document.getElementById('container'));
 eventContract.addEvent('click');
 eventContract.addEvent('dblclick');
 
-const dispatcher = new jsaction.Dispatcher();
+const dispatcher = new jsaction.Dispatcher;
 eventContract.dispatchTo(dispatcher.dispatch.bind(dispatcher));
 ```
 
@@ -142,7 +142,7 @@ very early on the page, ideally in the head of the page.
 ```html
 <script id="contract" src="https://www.gstatic.com/jsaction/contract.js"></script>
 <script>
-  const eventContract = new jsaction.EventContract();
+  const eventContract = new jsaction.EventContract;
 
   // Events will be handled for all elements on the page.
   eventContract.addContainer(window.document.documentElement);
@@ -178,7 +178,7 @@ function handleEvent() {
 }
 
 // Initialize the dispatcher, register the handlers, and then replay the queued events.
-const dispatcher = new jsaction.Dispatcher();
+const dispatcher = new jsaction.Dispatcher;
 eventContract.dispatchTo(dispatcher.dispatch.bind(dispatcher));
 dispatcher.registerHandlers(
     'button',

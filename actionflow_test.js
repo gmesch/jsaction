@@ -44,7 +44,7 @@ function setUpPage() {
 
 
 function setUp() {
-  mockControl_ = new goog.testing.MockControl();
+  mockControl_ = new goog.testing.MockControl;
   mockClock_ = new goog.testing.MockClock;
   mockClock_.install();
 

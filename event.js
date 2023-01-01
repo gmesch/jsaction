@@ -190,7 +190,7 @@ jsaction.event.addEventListener = function(element, eventType, handler) {
     // It's important that this adapter is deregistered eventually,
     // otherwise it constitutes a memory leak.
     //
-    // Redefining the argument handler is done for utmost
+    // Redefining the argument `handler` is done for utmost
     // conciseness. Better style would be more verbose. This needs to
     // be done such that the adapter rather than the original handler
     // is returned in event info, because that must be used to
@@ -237,8 +237,8 @@ jsaction.event.attachEventAdapter_ = function(target, handler) {
 
 
 /**
- * Removes the event handler for the given event from the element.
- * the given event type.
+ * Removes the event handler for the given event type from the
+ * element.
  *
  * @param {!Element} element The element.
  * @param {jsaction.EventHandlerInfo} info The information
