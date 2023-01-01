@@ -40,8 +40,8 @@ function bindEventsForContainer(contract, container) {
  * Creates an event contract.
  * @param {!Object} global
  */
-function main(global) {
-  var contract = new jsaction.EventContract();
+jsaction.eventContractAuto = function(global) {
+  var contract = new jsaction.EventContract;
   var container = document.querySelector('[data-jsaction-events]');
   if (bindEventsForContainer(contract, container)) {
     global['jsaction'] = {};
@@ -49,7 +49,7 @@ function main(global) {
       contract.dispatchTo(dispatcher);
     };
   }
-}
+};
 
 // Bootstraps an event contract.
-main(goog.global);
+jsaction.eventContractAuto(goog.global);

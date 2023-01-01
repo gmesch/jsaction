@@ -53,7 +53,10 @@ jsaction.domGenerator.Ancestors.prototype.reset_ =
 };
 
 
-/** @override */
+/**
+ * @return {Element}
+ * @override
+ */
 jsaction.domGenerator.Ancestors.prototype.next = function() {
   // Walk to the parent node, unless the node has a different owner in
   // which case we walk to the owner.
@@ -107,7 +110,10 @@ jsaction.domGenerator.EventPath.prototype.reset_ =
 };
 
 
-/** @override */
+/**
+ * @return {Element}
+ * @override
+ */
 jsaction.domGenerator.EventPath.prototype.next = function() {
   // TODO(user): If we could ban OWNERS for all users of event.path
   // then you could greatly simplify the code here.

@@ -19,7 +19,7 @@ goog.provide('jsaction.event');
 goog.require('jsaction.EventType');
 goog.require('jsaction.KeyCodes');
 goog.require('jsaction.dom');
-
+goog.require('goog.functions');
 
 /**
  * Records information for later handling of events. This type is
@@ -663,7 +663,7 @@ jsaction.event.recreateTouchEventAsClick = function(event) {
   click['type'] = jsaction.EventType.CLICK;
   for (const p in event) {
     const v = event[p];
-    if (p != 'type' && p != 'srcElement' && !goog.isFunction(v)) {
+    if (p != 'type' && p != 'srcElement' && !goog.functions.isFunction(v)) {
       click[p] = v;
     }
   }
